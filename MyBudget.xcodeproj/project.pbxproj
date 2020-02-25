@@ -18,6 +18,8 @@
 		A765F05723FF1AEE0001DFE6 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765F05623FF1AEE0001DFE6 /* DataManager.swift */; };
 		A765F05923FF1C260001DFE6 /* Income.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765F05823FF1C260001DFE6 /* Income.swift */; };
 		A765F05B23FF1D170001DFE6 /* Expens.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765F05A23FF1D170001DFE6 /* Expens.swift */; };
+		A7A10FA024018B6400FF72A3 /* HomeScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A10F9F24018B6400FF72A3 /* HomeScreenVC.swift */; };
+		A7B72DC52403C99100071BF8 /* ButtonsAppearence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B72DC42403C99100071BF8 /* ButtonsAppearence.swift */; };
 		A7F1938023FECF4A00A2901F /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1937F23FECF4A00A2901F /* MainTabBarController.swift */; };
 		A7F1938223FECF8400A2901F /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1938123FECF8400A2901F /* UserData.swift */; };
 /* End PBXBuildFile section */
@@ -38,6 +40,8 @@
 		A765F05623FF1AEE0001DFE6 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		A765F05823FF1C260001DFE6 /* Income.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Income.swift; sourceTree = "<group>"; };
 		A765F05A23FF1D170001DFE6 /* Expens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expens.swift; sourceTree = "<group>"; };
+		A7A10F9F24018B6400FF72A3 /* HomeScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenVC.swift; sourceTree = "<group>"; };
+		A7B72DC42403C99100071BF8 /* ButtonsAppearence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsAppearence.swift; sourceTree = "<group>"; };
 		A7F1937F23FECF4A00A2901F /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		A7F1938123FECF8400A2901F /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,6 +102,7 @@
 			children = (
 				A70D472923FECD2F0099D539 /* LoginVC.swift */,
 				A7F1937F23FECF4A00A2901F /* MainTabBarController.swift */,
+				A7A10F9F24018B6400FF72A3 /* HomeScreenVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -107,6 +112,7 @@
 			children = (
 				A70D472723FECD2F0099D539 /* SceneDelegate.swift */,
 				A70D472523FECD2F0099D539 /* AppDelegate.swift */,
+				A7B72DC42403C99100071BF8 /* ButtonsAppearence.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -241,11 +247,13 @@
 				A765F05523FF02C90001DFE6 /* Wallet.swift in Sources */,
 				A70D472A23FECD2F0099D539 /* LoginVC.swift in Sources */,
 				A765F05923FF1C260001DFE6 /* Income.swift in Sources */,
+				A7A10FA024018B6400FF72A3 /* HomeScreenVC.swift in Sources */,
 				A70D472623FECD2F0099D539 /* AppDelegate.swift in Sources */,
 				A765F05B23FF1D170001DFE6 /* Expens.swift in Sources */,
 				A765F05723FF1AEE0001DFE6 /* DataManager.swift in Sources */,
 				A7F1938023FECF4A00A2901F /* MainTabBarController.swift in Sources */,
 				A7F1938223FECF8400A2901F /* UserData.swift in Sources */,
+				A7B72DC52403C99100071BF8 /* ButtonsAppearence.swift in Sources */,
 				A70D472823FECD2F0099D539 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
