@@ -11,22 +11,34 @@ import UIKit
 class HomeScreenVC: UIViewController {
     
     @IBOutlet weak var viewTitle: UIView!
-    @IBOutlet weak var tblItems: UITableView!
-    
+    @IBOutlet weak var tableView: UITableView!
     var isDown = false
+ 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-  
-        let headerNib = UINib.init(nibName: "HeaderViewInSection", bundle: Bundle.main)
-        tblItems.register(headerNib, forHeaderFooterViewReuseIdentifier: "HeaderViewInSection")
+        configureTableView()
         
-        tblItems.rowHeight = UITableView.automaticDimension
-        tblItems.estimatedRowHeight = 600
+    }
+    
+    func configureTableView() {
+//        self.tableView.estimatedRowHeight = 100
+//        self.tableView.rowHeight = UITableView.automaticDimension
+        self.tableView.tableFooterView = UIView()
+    
+        let headerNib = UINib.init(nibName: "HeaderViewInSection", bundle: Bundle.main)
+        tableView.register(headerNib, forHeaderFooterViewReuseIdentifier: "HeaderViewInSection")
+        tableView.alwaysBounceVertical = false
         
     }
 }
 
+extension UIView{
+    var globalPoint :CGPoint? {
+        return self.superview?.convert(self.frame.origin, to: nil)
+    }
 
-
-
+    var globalFrame :CGRect? {
+        return self.superview?.convert(self.frame, to: nil)
+    }
+}

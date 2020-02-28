@@ -18,8 +18,18 @@ extension HomeScreenVC: UITableViewDelegate, UITableViewDataSource {
         return 35
     }
     
-    
+    //TODO: dynamic height for last section in row, need to get size from section to safe area
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let headerHeight: CGFloat = 35 * 4
+        let cellHeight: CGFloat = 3 * 100
+        let tableViewHeight = tableView.frame.size.height
+        print(tableViewHeight)
+        let result = tableViewHeight - headerHeight - cellHeight
+        let getSection = indexPath.section
+        return getSection == 3 ? result : 100
+    }
+
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
     
@@ -28,7 +38,6 @@ extension HomeScreenVC: UITableViewDelegate, UITableViewDataSource {
         let myView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderViewInSection") as! HeaderViewInSection
         
         myView.nameOfSection.text = "HEllo"
-        myView.backgroundColor = .blue
         return myView
     }
     
@@ -38,15 +47,12 @@ extension HomeScreenVC: UITableViewDelegate, UITableViewDataSource {
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //TODO seder with cells
+
         let getSection = indexPath.section
+        HomeTableVC.currentSection = getSection
         
-        if getSection == 0 {
-            let vc = tableView.dequeueReusableCell(withIdentifier: "wallet", for: indexPath) as! HomeTableVC
-            return vc
-        } else {
-            let vc = tableView.dequeueReusableCell(withIdentifier: "wallet", for: indexPath)
-            return vc
-        }
+        let vc = tableView.dequeueReusableCell(withIdentifier: "wallet", for: indexPath) as! HomeTableVC
+        
+        return vc
     }
 }
