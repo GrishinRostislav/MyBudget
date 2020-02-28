@@ -16,7 +16,6 @@ class LoginVC: UIViewController {
     @IBOutlet weak var passwordTF: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -63,7 +62,6 @@ class LoginVC: UIViewController {
             self.showMainScreen()
         }
     }
-    
     
     private func showMainScreen() {
         let vc = storyboard?.instantiateViewController(withIdentifier: "MainController") as! MainTabBarController
