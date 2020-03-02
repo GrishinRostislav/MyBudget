@@ -13,4 +13,5 @@ class Wallet: Object {
     @objc dynamic var logo: Data?
     @objc dynamic var currency = "$"
     @objc dynamic var total = 0
+    var subCategories = List<SubWallet>()
 }

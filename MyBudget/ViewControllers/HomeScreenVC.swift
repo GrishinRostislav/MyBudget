@@ -7,9 +7,21 @@
 //
 
 import UIKit
+import RealmSwift
+
+//var currentUser: UserData?
+
+class MyTapGesture: UITapGestureRecognizer {
+    var typeOfCategory: String = ""
+}
 
 class HomeScreenVC: UIViewController {
     
+    static let shared = HomeScreenVC()
+    
+    var dataManager = DataManager()
+    
+    @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var viewTitle: UIView!
     @IBOutlet weak var tableView: UITableView!
     
@@ -18,8 +30,25 @@ class HomeScreenVC: UIViewController {
     @IBOutlet weak var goalSteck: UIStackView!
     @IBOutlet weak var expensStack: UIStackView!
     @IBOutlet weak var darkGround: UIView!
-    var heightStack: CGFloat?
+    
+    var myTimer: Timer?
+    
+    //TODO: check variables, maybe it is not needed
+    var walletList: List<Wallet>!
+    var incomeList: List<Income>!
+    var expenseList: List<Expens>!
+    //---------------------------------------------
+    
+    //MARK: menu values
+    var stacksArray: [UIStackView]!
+    var heightStack: CGFloat!
+    var extraSpecing: CGFloat = 5
     var isDown = false
+    //-----------------------------
+    
+    let newCategotyIndentifier = "CreateNewCategory"
+    
+    var haederName = ""
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         if !isDown {
@@ -29,11 +58,70 @@ class HomeScreenVC: UIViewController {
         }
     }
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        
+        heightStack = incomeStack.frame.size.height + extraSpecing
+        stacksArray = [incomeStack, walletStack, goalSteck, expensStack]
+        
+        setTagForStack()
+        
+        setTimer()
         configureTableView()
-        heightStack = incomeStack.frame.size.height + 5
+        createTapGestures()
+        
+        walletList = dataManager.getWallets()
+        incomeList = dataManager.getIncome()
+        expenseList = dataManager.getExpens()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        refresh()
+    }
+    
+    //MARK: Timer with interval for refresh Data
+    private func setTimer() {
+        self.myTimer = Timer(timeInterval: 30.0, target: self, selector: #selector(refresh), userInfo: nil, repeats: true)
+        RunLoop.main.add(self.myTimer!, forMode: .default)
+    }
+
+    @objc func refresh() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+            print("tableview updated")
+        }
+    }
+    //-------------------------------------
+
+    //MARK: find tap for specialize catagory
+    func createTapGestures() {
+        for index in 0...stacksArray.count - 1 {
+            let stack = stacksArray[index]
+            let tapOfCategory = MyTapGesture.init(target: self, action: #selector(createNewCategoryVC))
+            tapOfCategory.typeOfCategory = DataManager.getCategory(index: index)
+            stack.isUserInteractionEnabled = true
+            stack.addGestureRecognizer(tapOfCategory)
+        }
+    }
+    
+    @objc func createNewCategoryVC(sender: MyTapGesture) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: newCategotyIndentifier) as! NewCategoryVC
+        vc.category = sender.typeOfCategory
+        DispatchQueue.main.async {
+            self.present(vc, animated: true, completion: nil)
+        }
+    }
+    
+    @IBAction func unwindToHome(_ unwindSegue: UIStoryboardSegue) {
+        _ = unwindSegue.source
+        isDown.toggle()
+        showOrHideMenu(isHide: isDown)
+    }
+    
+    @IBAction func unwindToDetails(_ unwindSegue: UIStoryboardSegue) {
+       // let sourceViewController = unwindSegue.source
     }
     
     func configureTableView() {
@@ -42,61 +130,69 @@ class HomeScreenVC: UIViewController {
         let headerNib = UINib.init(nibName: "HeaderViewInSection", bundle: Bundle.main)
         tableView.register(headerNib, forHeaderFooterViewReuseIdentifier: "HeaderViewInSection")
         tableView.alwaysBounceVertical = false
-        
+    }
+
+    @IBAction func addButtonTapped(_ sender: UIButton) {
+        isDown.toggle()
+        showOrHideMenu(isHide: isDown)
     }
     
-
-    
-    @IBAction func addButtonTapped(_ sender: UIButton) {
-        guard let height = heightStack else {return}
-        
-        isDown.toggle()
-        
-        if isDown {
-            sender.tintColor = .white
-            incomeStack.isHidden = false
-            walletStack.isHidden = false
-            goalSteck.isHidden = false
-            expensStack.isHidden = false
-            darkGround.isHidden = false
-            UIView.animate(withDuration: 0.5) {
-                self.setNeedsStatusBarAppearanceUpdate()
-                self.incomeStack.frame.origin.y += height
-                self.walletStack.frame.origin.y += height * 2
-                self.goalSteck.frame.origin.y += height * 3
-                self.expensStack.frame.origin.y += height * 4
-                self.incomeStack.alpha = 1
-                self.walletStack.alpha = 1
-                self.goalSteck.alpha = 1
-                self.expensStack.alpha = 1
-                self.darkGround.alpha = 0.9
-                sender.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 4)
-            }
-        } else {
-            sender.tintColor = .black
-            
-            UIView.animate(withDuration: 0.5, animations: {
-                self.setNeedsStatusBarAppearanceUpdate()
-                sender.transform = CGAffineTransform.identity
-                self.incomeStack.frame.origin.y -= height
-                  self.walletStack.frame.origin.y -= height * 2
-                  self.goalSteck.frame.origin.y -= height * 3
-                  self.expensStack.frame.origin.y -= height * 4
-                self.incomeStack.alpha = 0
-                self.walletStack.alpha = 0
-                self.goalSteck.alpha = 0
-                self.expensStack.alpha = 0
-                self.darkGround.alpha = 0
-                  
-            }) { (_) in
-                self.incomeStack.isHidden = true
-                self.walletStack.isHidden = true
-                self.goalSteck.isHidden = true
-                self.expensStack.isHidden = true
-                self.darkGround.isHidden = true
-            }
-
+    func showOrHideMenu(isHide: Bool) {
+        if isHide { showMenu() }
+        else {
+            hideMenu()
         }
-        
+    }
+    
+    func setTagForStack() {
+        for index in 0...stacksArray.count - 1 {
+            stacksArray[index].tag = index
+        }
+    }
+    
+    func showMenu() {
+        addButton.tintColor = .white
+        self.toggleItems()
+        UIView.animate(withDuration: 0.5) {
+            self.setNeedsStatusBarAppearanceUpdate()
+            self.configureStacks(array: self.stacksArray, isHide: self.isDown)
+            self.addButton.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 4)
+        }
+    }
+    
+    func hideMenu() {
+        addButton.tintColor = .black
+        UIView.animate(withDuration: 0.5, animations: {
+            self.setNeedsStatusBarAppearanceUpdate()
+            self.addButton.transform = CGAffineTransform.identity
+            self.configureStacks(array: self.stacksArray, isHide: self.isDown)
+        }) { (_) in
+            self.toggleItems()
+        }
+    }
+    
+    func configureStacks(array: [UIStackView], isHide: Bool) {
+        if isHide {
+            for index in 0...array.count - 1 {
+                array[index].alpha = 1
+                array[index].frame.origin.y += self.heightStack * CGFloat(index + 1)
+            }
+            self.darkGround.alpha = 0.9
+        } else {
+            for index in 0...array.count - 1 {
+                array[index].alpha = 0
+                array[index].frame.origin.y -= self.heightStack * CGFloat(index + 1)
+            }
+            self.darkGround.alpha = 0
+        }
+    }
+    
+    func toggleItems() {
+        self.incomeStack.isHidden.toggle()
+        self.walletStack.isHidden.toggle()
+        self.goalSteck.isHidden.toggle()
+        self.expensStack.isHidden.toggle()
+        self.darkGround.isHidden.toggle()
     }
 }
+

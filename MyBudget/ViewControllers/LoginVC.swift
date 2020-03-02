@@ -68,8 +68,11 @@ class LoginVC: UIViewController {
         DispatchQueue.main.async {
             self.present(vc, animated: true, completion: nil)
         }
+        
     }
 }
+
+
 
 extension LoginVC: UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

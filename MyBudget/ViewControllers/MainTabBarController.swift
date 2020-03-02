@@ -26,7 +26,6 @@ class MainTabBarController: UITabBarController {
     private func isUserOnline(){
         guard let isOnline = UserDefaults.standard.value(forKey: "isOnline") as? Bool else {return}
         if  !isOnline {
-            print("User is Online")
             showLoginScreen()
         }
     }

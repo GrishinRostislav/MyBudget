@@ -10,6 +10,8 @@ import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
 
+    weak var delegate:TableViewInsideCollectionViewDelegate?
+
     @IBOutlet weak var backgroundCell: UIView!
     @IBOutlet weak var logoCell: UIImageView!
     @IBOutlet weak var nameOfCell: UILabel!
@@ -22,7 +24,6 @@ class CollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         
         viewFrame.layer.cornerRadius = viewFrame.frame.size.height / 2
-        
     }
 
 }
