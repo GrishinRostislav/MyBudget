@@ -11,7 +11,8 @@ class UserData: Object {
     @objc dynamic var email = String()
     @objc dynamic var password = String()
     @objc dynamic var isOnline = false
-    var wallets = List<Wallet>()
     var incomes = List<Income>()
+    var wallets = List<Wallet>()
+    var goal = List<Goal>()
     var expense = List<Expens>()
 }

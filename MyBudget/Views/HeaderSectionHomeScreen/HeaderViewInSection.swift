@@ -17,6 +17,7 @@ class HeaderViewInSection: UITableViewHeaderFooterView {
     override func awakeFromNib() {
         backgroundView = UIView()
         backgroundView?.backgroundColor = hexStringToUIColor(hex: "EBEBEB")
+        currenceOfSection.text = "₪"
     }
     
     func hexStringToUIColor (hex:String) -> UIColor {

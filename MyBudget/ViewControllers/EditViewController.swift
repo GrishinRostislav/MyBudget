@@ -12,14 +12,39 @@ import RealmSwift
 class EditViewController: UIViewController {
     
     var indexForDelet: Int!
+    var indexForCategory: Int!
+    var getNameOfCategory: String!
+    var nameDelete: String!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        getNameOfCategory = DataManager.getCategory(index: indexForCategory)
     }
     
     @IBAction func deletCategory(_ sender: UIButton) {
-        DataManager.deletWallet(index: indexForDelet)
-        presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+        
+        switch getNameOfCategory {
+        case "Income":
+            DataManager.deletIncome(index: indexForDelet)
+            HomeTableVC.reloadItemAtIndex = indexForDelet
+            HomeTableVC.deleteFromView = 0
+        case "Wallet":
+            DataManager.deletWallet(index: indexForDelet)
+            HomeTableVC.reloadItemAtIndex = indexForDelet
+            HomeTableVC.deleteFromView = 1
+        case "Goal":
+            DataManager.deletGoal(index: indexForDelet)
+            HomeTableVC.reloadItemAtIndex = indexForDelet
+            HomeTableVC.deleteFromView = 2
+        case "Expense":
+            DataManager.deletExpense(name: nameDelete)
+            HomeTableVC.reloadItemAtIndex = indexForDelet
+            HomeTableVC.deleteFromView = 3
+        default:
+            print("error")
+        }
     }
 }
+

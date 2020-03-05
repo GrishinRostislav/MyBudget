@@ -8,5 +8,5 @@
 import UIKit
 
 protocol TableViewInsideCollectionViewDelegate:class {
-    func cellTaped(data:IndexPath)
+    func cellTaped(data:IndexPath, collectionView: UICollectionView)
 }

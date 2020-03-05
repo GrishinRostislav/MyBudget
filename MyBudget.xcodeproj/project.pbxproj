@@ -19,6 +19,7 @@
 		A72BE5E22405DC900056C678 /* HomeTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72BE5E12405DC900056C678 /* HomeTableVC.swift */; };
 		A72BE5E52405E8270056C678 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72BE5E32405E8270056C678 /* CollectionViewCell.swift */; };
 		A72BE5E62405E8270056C678 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A72BE5E42405E8270056C678 /* CollectionViewCell.xib */; };
+		A7544AA5240ECD8D00889FF4 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7544AA4240ECD8D00889FF4 /* Goal.swift */; };
 		A75D5B10240BEF0F00A5A7F9 /* SubWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75D5B0F240BEF0F00A5A7F9 /* SubWallet.swift */; };
 		A765F05523FF02C90001DFE6 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765F05423FF02C90001DFE6 /* Wallet.swift */; };
 		A765F05723FF1AEE0001DFE6 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765F05623FF1AEE0001DFE6 /* DataManager.swift */; };
@@ -54,6 +55,7 @@
 		A72BE5E12405DC900056C678 /* HomeTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableVC.swift; sourceTree = "<group>"; };
 		A72BE5E32405E8270056C678 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		A72BE5E42405E8270056C678 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		A7544AA4240ECD8D00889FF4 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 		A75D5B0F240BEF0F00A5A7F9 /* SubWallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubWallet.swift; sourceTree = "<group>"; };
 		A765F05423FF02C90001DFE6 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		A765F05623FF1AEE0001DFE6 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -198,9 +200,10 @@
 			isa = PBXGroup;
 			children = (
 				A7F1938123FECF8400A2901F /* UserData.swift */,
+				A765F05823FF1C260001DFE6 /* Income.swift */,
 				A765F05423FF02C90001DFE6 /* Wallet.swift */,
 				A75D5B0F240BEF0F00A5A7F9 /* SubWallet.swift */,
-				A765F05823FF1C260001DFE6 /* Income.swift */,
+				A7544AA4240ECD8D00889FF4 /* Goal.swift */,
 				A765F05A23FF1D170001DFE6 /* Expens.swift */,
 				A765F05623FF1AEE0001DFE6 /* DataManager.swift */,
 				A7295DEC240D76320078DFE1 /* protocolCell.swift */,
@@ -337,6 +340,7 @@
 				A70D472823FECD2F0099D539 /* SceneDelegate.swift in Sources */,
 				A7B72DD12405818D00071BF8 /* HeaderViewInSection.swift in Sources */,
 				A7AA4173240ABA9C00E364B7 /* NewCategoryVC.swift in Sources */,
+				A7544AA5240ECD8D00889FF4 /* Goal.swift in Sources */,
 				A7F396C42405ED7400032314 /* ExtensionCollectionView + HomeTableVC.swift in Sources */,
 				A75D5B10240BEF0F00A5A7F9 /* SubWallet.swift in Sources */,
 			);

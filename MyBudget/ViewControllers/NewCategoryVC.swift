@@ -32,10 +32,11 @@ class NewCategoryVC: UIViewController {
         if summOrLimite.text?.count == 0 { summOrLimite.text = "0" }
         guard let total = Int(summOrLimite.text!) else {return}
         guard let name = nameCategoryTF.text else {return}
+        guard let currency = currencyOfCategory.titleLabel?.text else {return }
         
         switch nameCategory {
         case "Wallet":
-            let newWallet = Wallet(value: ["name": name, "total": total])
+            let newWallet = Wallet(value: ["name": name, "total": total, "currency": currency])
             DispatchQueue(label: "background").async {
                 autoreleasepool {
                     DataManager.saveNewWallets(wallet: newWallet)
@@ -48,7 +49,16 @@ class NewCategoryVC: UIViewController {
                     DataManager.saveNewIncoms(incomes: newWallet)
                 }
             }
-        case "Expens":
+            
+        case "Goal":
+            let newWallet = Goal(value: ["name": name, "total": total])
+            DispatchQueue(label: "background").async {
+                autoreleasepool {
+                    DataManager.saveNewGoal(incomes: newWallet)
+                }
+            }
+            
+        case "Expense":
             let newWallet = Expens(value: ["name": name, "total": total])
             DispatchQueue(label: "background").async {
                 autoreleasepool {
@@ -72,16 +82,22 @@ class NewCategoryVC: UIViewController {
     }
     
     func setincomeUI(){
-        nameOfCatagory.text = "Новая категория дохода"
+        nameOfCatagory.text = "New Category"
         summOrLimite.isHidden = true
+        currencyOfCategory.isHidden = true
     }
     
     @IBAction func cancel(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
     @IBAction func saveToDataBase(_ sender: UIButton) {
+        print("Write in data base")
         saveNewItemToDataBase(nameCategory: category)
-        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func changeCurrency(_ sender: UIButton) {
+        let title = currencyOfCategory.titleLabel?.text == "₪" ? "$" : "₪"
+        currencyOfCategory.setTitle(title, for: .normal)
     }
 }
 

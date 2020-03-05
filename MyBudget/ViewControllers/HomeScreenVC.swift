@@ -21,6 +21,10 @@ class HomeScreenVC: UIViewController {
     
     var dataManager = DataManager()
     
+    @IBOutlet weak var balanceTotal: UILabel!
+    @IBOutlet weak var expensTotal: UILabel!
+    @IBOutlet weak var prognozTotal: UILabel!
+    
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var viewTitle: UIView!
     @IBOutlet weak var tableView: UITableView!
@@ -37,6 +41,7 @@ class HomeScreenVC: UIViewController {
     var walletList: List<Wallet>!
     var incomeList: List<Income>!
     var expenseList: List<Expens>!
+    var goalList: List<Goal>!
     //---------------------------------------------
     
     //MARK: menu values
@@ -67,13 +72,15 @@ class HomeScreenVC: UIViewController {
         
         setTagForStack()
         
-        setTimer()
+      //  setTimer()
         configureTableView()
         createTapGestures()
+        tapGestureOnBackground()
         
         walletList = dataManager.getWallets()
         incomeList = dataManager.getIncome()
         expenseList = dataManager.getExpens()
+        goalList = dataManager.getGoals()
         
     }
     
@@ -82,12 +89,12 @@ class HomeScreenVC: UIViewController {
     }
     
     //MARK: Timer with interval for refresh Data
-    private func setTimer() {
-        self.myTimer = Timer(timeInterval: 30.0, target: self, selector: #selector(refresh), userInfo: nil, repeats: true)
-        RunLoop.main.add(self.myTimer!, forMode: .default)
-    }
+//    private func setTimer() {
+//        self.myTimer = Timer(timeInterval: 30.0, target: self, selector: #selector(refresh), userInfo: nil, repeats: true)
+//        RunLoop.main.add(self.myTimer!, forMode: .default)
+//    }
 
-    @objc func refresh() {
+     func refresh() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
             print("tableview updated")
@@ -104,6 +111,16 @@ class HomeScreenVC: UIViewController {
             stack.isUserInteractionEnabled = true
             stack.addGestureRecognizer(tapOfCategory)
         }
+    }
+    
+    func tapGestureOnBackground() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapOnViewBlack))
+        darkGround.isUserInteractionEnabled = true
+        darkGround.addGestureRecognizer(tap)
+    }
+    @objc func tapOnViewBlack() {
+        isDown.toggle()
+        showOrHideMenu(isHide: isDown)
     }
     
     @objc func createNewCategoryVC(sender: MyTapGesture) {

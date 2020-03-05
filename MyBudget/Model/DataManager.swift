@@ -40,6 +40,17 @@ class DataManager {
             }
         }
     }
+    static func saveNewGoal(incomes: Goal){
+        DispatchQueue(label: "background").async {
+            autoreleasepool {
+                let realm = try! Realm()
+                let users = realm.objects(UserData.self)
+                try! realm.write {
+                    users[0].goal.append(incomes)
+                }
+            }
+        }
+    }
     
     static func saveNewExpens(expens: Expens){
         DispatchQueue(label: "background").async {
@@ -54,6 +65,17 @@ class DataManager {
     }
     //-------------------------------------------------------
     //MARK: Delete Data
+    static func deletIncome(index: Int) {
+        DispatchQueue(label: "background").async {
+            autoreleasepool {
+                let realm = try! Realm()
+                let users = realm.objects(UserData.self)
+                try! realm.write {
+                    users[0].incomes.remove(at: index)
+                }
+            }
+        }
+    }
     static func deletWallet(index: Int) {
         DispatchQueue(label: "background").async {
             autoreleasepool {
@@ -61,6 +83,31 @@ class DataManager {
                 let users = realm.objects(UserData.self)
                 try! realm.write {
                     users[0].wallets.remove(at: index)
+                }
+            }
+        }
+    }
+    static func deletGoal(index: Int) {
+        DispatchQueue(label: "background").async {
+            autoreleasepool {
+                let realm = try! Realm()
+                let users = realm.objects(UserData.self)
+                try! realm.write {
+                    users[0].goal.remove(at: index)
+                }
+            }
+        }
+    }
+    static func deletExpense(name: String) {
+        print("Index in DataManager", index)
+        DispatchQueue(label: "background").async {
+            autoreleasepool {
+                let realm = try! Realm()
+                let users = realm.objects(UserData.self)
+                let delete = users[0].expense.filter("name == %@", name).first
+                print("I need to delete", delete)
+                try! realm.write {
+                    realm.delete(delete!)
                 }
             }
         }
@@ -81,6 +128,10 @@ class DataManager {
         return myUser.expense
     }
     
+    func getGoals() -> List<Goal>{
+        let myUser = realm.objects(UserData.self)[0]
+        return myUser.goal
+    }
     
     
 }

@@ -27,48 +27,55 @@ extension HomeScreenVC: UITableViewDelegate, UITableViewDataSource {
         let getSection = indexPath.section
         return getSection == 3 ? result : 100
     }
-
+    
+    //MARK: Configure headers sections
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let myView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderViewInSection") as! HeaderViewInSection
 
         switch section {
         case 0:
-            myView.nameOfSection.text = "Доходы"
+            myView.nameOfSection.text = "Incomes"
             var result = 0
             for incom in incomeList {
                 result += incom.total
             }
             myView.countOfSection.text = String(result)
         case 1:
-            myView.nameOfSection.text = "Кошельки"
+            myView.nameOfSection.text = "Wallets"
             var result = 0
             for incom in walletList {
                 result += incom.total
             }
             myView.countOfSection.text = String(result)
+            balanceTotal.text = myView.countOfSection.text
+            balanceTotal.text! += " ₪"
         case 2:
-            myView.nameOfSection.text = "Цели"
-            let result = 0
+            myView.nameOfSection.text = "Goals"
+            var result = 0
+            for goal in goalList {
+                result += goal.total
+            }
             myView.countOfSection.text = String(result)
         case 3:
-            myView.nameOfSection.text = "Расходы"
+            myView.nameOfSection.text = "Expenses"
             var result = 0
             for incom in expenseList {
                 result += incom.total
             }
             myView.countOfSection.text = String(result)
+            expensTotal.text = myView.countOfSection.text
+            expensTotal.text! += " ₪"
         default:
             print("error")
         }
-
         return myView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        return 1
     }
-
+    //MARK: Configure custom cells
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let getSection = indexPath.section
@@ -76,7 +83,6 @@ extension HomeScreenVC: UITableViewDelegate, UITableViewDataSource {
         HomeTableVC.currentSection = getSection
         let vc = tableView.dequeueReusableCell(withIdentifier: "wallet", for: indexPath) as! HomeTableVC
         vc.awakeFromNib()
-     
         return vc
     }
 
