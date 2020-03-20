@@ -15,36 +15,25 @@ class EditViewController: UIViewController {
     var indexForCategory: Int!
     var getNameOfCategory: String!
     var nameDelete: String!
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getNameOfCategory = DataManager.getCategory(index: indexForCategory)
+       // getNameOfCategory = DataManager.getCategory(index: indexForCategory)
     }
     
     @IBAction func deletCategory(_ sender: UIButton) {
         
-        switch getNameOfCategory {
-        case "Income":
-            DataManager.deletIncome(index: indexForDelet)
-            HomeTableVC.reloadItemAtIndex = indexForDelet
-            HomeTableVC.deleteFromView = 0
-        case "Wallet":
-            DataManager.deletWallet(index: indexForDelet)
-            HomeTableVC.reloadItemAtIndex = indexForDelet
-            HomeTableVC.deleteFromView = 1
-        case "Goal":
-            DataManager.deletGoal(index: indexForDelet)
-            HomeTableVC.reloadItemAtIndex = indexForDelet
-            HomeTableVC.deleteFromView = 2
-        case "Expense":
-            DataManager.deletExpense(name: nameDelete)
-            HomeTableVC.reloadItemAtIndex = indexForDelet
-            HomeTableVC.deleteFromView = 3
-        default:
-            print("error")
-        }
+        DataManager.deleteItem(nameCategory: getNameOfCategory, index: indexForDelet)
+
+    }
+    
+    @IBAction func backButton(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func saveButton(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
 }
 

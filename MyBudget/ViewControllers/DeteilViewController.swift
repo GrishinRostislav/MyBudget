@@ -11,9 +11,10 @@ import UIKit
 class DeteilViewController: UIViewController {
 
     @IBOutlet weak var nameOfLabel: UILabel!
-    var name: Int!
-    var currentTag: Int!
+    
+    var category: String!
     var nameOfItem: String!
+    var indexItem: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,8 +29,8 @@ class DeteilViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! EditViewController
-        vc.indexForDelet = name
-        vc.indexForCategory = currentTag
+        vc.indexForDelet = indexItem
         vc.nameDelete = nameOfItem
+        vc.getNameOfCategory = category
     }
 }

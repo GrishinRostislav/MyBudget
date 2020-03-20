@@ -19,21 +19,35 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        isUserOnline()
         scrollView.showsVerticalScrollIndicator = false
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(touch))
         recognizer.numberOfTapsRequired = 1
         recognizer.numberOfTouchesRequired = 1
         scrollView.addGestureRecognizer(recognizer)
 
-        // Implementing the touch(), outside of viewDidLoad:
-
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         registerForKeyboardNotification()
+        isUserOnline()
+    }
+    
+    private func isUserOnline(){
+        guard let isOnline = UserDefaults.standard.value(forKey: "isOnline") as? Bool else {return}
+        let realm = try! Realm()
+        let users = realm.objects(UserData.self)
+        if users.count != 0 && isOnline {
+            showMainScreen()
+        }
+    }
+    
+    private func showLoginScreen() {
+        let loginViewController = storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+            self.present(loginViewController, animated: true, completion: nil)
     }
     
     @objc func touch() {
-        //print("Touches")
         self.view.endEditing(true)
     }
 

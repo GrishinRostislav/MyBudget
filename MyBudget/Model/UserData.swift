@@ -13,6 +13,6 @@ class UserData: Object {
     @objc dynamic var isOnline = false
     var incomes = List<Income>()
     var wallets = List<Wallet>()
-    var goal = List<Goal>()
+    var goals = List<Goal>()
     var expense = List<Expens>()
 }

@@ -10,8 +10,11 @@ import RealmSwift
 
 class Wallet: Object {
     @objc dynamic var name = ""
-    @objc dynamic var logo: Data?
+    @objc dynamic var logo = ""
+    @objc dynamic var imageLogo: Data?
     @objc dynamic var currency = "$"
+    @objc dynamic var amount = 0
     @objc dynamic var total = 0
-    var subCategories = List<SubWallet>()
+    @objc dynamic var id = ""
+    var transactions = List<Transaction>()
 }

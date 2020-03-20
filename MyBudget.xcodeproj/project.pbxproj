@@ -14,28 +14,24 @@
 		A70D472D23FECD2F0099D539 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A70D472B23FECD2F0099D539 /* Main.storyboard */; };
 		A70D472F23FECD300099D539 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A70D472E23FECD300099D539 /* Assets.xcassets */; };
 		A70D473223FECD300099D539 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A70D473023FECD300099D539 /* LaunchScreen.storyboard */; };
-		A7295DED240D76320078DFE1 /* protocolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7295DEC240D76320078DFE1 /* protocolCell.swift */; };
 		A7295DEF240DAF370078DFE1 /* TypesOfCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7295DEE240DAF370078DFE1 /* TypesOfCategories.swift */; };
-		A72BE5E22405DC900056C678 /* HomeTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72BE5E12405DC900056C678 /* HomeTableVC.swift */; };
 		A72BE5E52405E8270056C678 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72BE5E32405E8270056C678 /* CollectionViewCell.swift */; };
 		A72BE5E62405E8270056C678 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A72BE5E42405E8270056C678 /* CollectionViewCell.xib */; };
 		A7544AA5240ECD8D00889FF4 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7544AA4240ECD8D00889FF4 /* Goal.swift */; };
-		A75D5B10240BEF0F00A5A7F9 /* SubWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75D5B0F240BEF0F00A5A7F9 /* SubWallet.swift */; };
 		A765F05523FF02C90001DFE6 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765F05423FF02C90001DFE6 /* Wallet.swift */; };
 		A765F05723FF1AEE0001DFE6 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765F05623FF1AEE0001DFE6 /* DataManager.swift */; };
 		A765F05923FF1C260001DFE6 /* Income.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765F05823FF1C260001DFE6 /* Income.swift */; };
 		A765F05B23FF1D170001DFE6 /* Expens.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765F05A23FF1D170001DFE6 /* Expens.swift */; };
 		A7780C31240D60A8005E2FD3 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7780C30240D60A8005E2FD3 /* EditViewController.swift */; };
 		A7780C33240D64FE005E2FD3 /* DeteilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7780C32240D64FE005E2FD3 /* DeteilViewController.swift */; };
+		A77E839B2423838E009460EA /* SubCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77E839A2423838E009460EA /* SubCategory.swift */; };
+		A78CAA23241A5B5C0085E548 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78CAA22241A5B5C0085E548 /* Transaction.swift */; };
 		A7A10FA024018B6400FF72A3 /* HomeScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A10F9F24018B6400FF72A3 /* HomeScreenVC.swift */; };
 		A7AA4173240ABA9C00E364B7 /* NewCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AA4172240ABA9C00E364B7 /* NewCategoryVC.swift */; };
 		A7B72DC52403C99100071BF8 /* ButtonsAppearence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B72DC42403C99100071BF8 /* ButtonsAppearence.swift */; };
-		A7B72DCE24057F9000071BF8 /* HeaderViewInSection.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7B72DCD24057F9000071BF8 /* HeaderViewInSection.xib */; };
-		A7B72DD12405818D00071BF8 /* HeaderViewInSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B72DD02405818D00071BF8 /* HeaderViewInSection.swift */; };
-		A7B72DD424059FA700071BF8 /* ExtensionTabelViewForHomeScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B72DD324059FA700071BF8 /* ExtensionTabelViewForHomeScreenVC.swift */; };
+		A7E0C6DC2418D1CB009AA686 /* AddNewTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E0C6DB2418D1CB009AA686 /* AddNewTransaction.swift */; };
 		A7F1938023FECF4A00A2901F /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1937F23FECF4A00A2901F /* MainTabBarController.swift */; };
 		A7F1938223FECF8400A2901F /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1938123FECF8400A2901F /* UserData.swift */; };
-		A7F396C42405ED7400032314 /* ExtensionCollectionView + HomeTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F396C32405ED7400032314 /* ExtensionCollectionView + HomeTableVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,28 +46,24 @@
 		A70D472E23FECD300099D539 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A70D473123FECD300099D539 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A70D473323FECD300099D539 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A7295DEC240D76320078DFE1 /* protocolCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = protocolCell.swift; sourceTree = "<group>"; };
 		A7295DEE240DAF370078DFE1 /* TypesOfCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypesOfCategories.swift; sourceTree = "<group>"; };
-		A72BE5E12405DC900056C678 /* HomeTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableVC.swift; sourceTree = "<group>"; };
 		A72BE5E32405E8270056C678 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		A72BE5E42405E8270056C678 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		A7544AA4240ECD8D00889FF4 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
-		A75D5B0F240BEF0F00A5A7F9 /* SubWallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubWallet.swift; sourceTree = "<group>"; };
 		A765F05423FF02C90001DFE6 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		A765F05623FF1AEE0001DFE6 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		A765F05823FF1C260001DFE6 /* Income.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Income.swift; sourceTree = "<group>"; };
 		A765F05A23FF1D170001DFE6 /* Expens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expens.swift; sourceTree = "<group>"; };
 		A7780C30240D60A8005E2FD3 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		A7780C32240D64FE005E2FD3 /* DeteilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeteilViewController.swift; sourceTree = "<group>"; };
+		A77E839A2423838E009460EA /* SubCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategory.swift; sourceTree = "<group>"; };
+		A78CAA22241A5B5C0085E548 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		A7A10F9F24018B6400FF72A3 /* HomeScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenVC.swift; sourceTree = "<group>"; };
 		A7AA4172240ABA9C00E364B7 /* NewCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCategoryVC.swift; sourceTree = "<group>"; };
 		A7B72DC42403C99100071BF8 /* ButtonsAppearence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsAppearence.swift; sourceTree = "<group>"; };
-		A7B72DCD24057F9000071BF8 /* HeaderViewInSection.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderViewInSection.xib; sourceTree = "<group>"; };
-		A7B72DD02405818D00071BF8 /* HeaderViewInSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewInSection.swift; sourceTree = "<group>"; };
-		A7B72DD324059FA700071BF8 /* ExtensionTabelViewForHomeScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTabelViewForHomeScreenVC.swift; sourceTree = "<group>"; };
+		A7E0C6DB2418D1CB009AA686 /* AddNewTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTransaction.swift; sourceTree = "<group>"; };
 		A7F1937F23FECF4A00A2901F /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		A7F1938123FECF8400A2901F /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
-		A7F396C32405ED7400032314 /* ExtensionCollectionView + HomeTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExtensionCollectionView + HomeTableVC.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,15 +119,6 @@
 			path = MyBudget;
 			sourceTree = "<group>";
 		};
-		A72BE5D92405CFA10056C678 /* HeaderSectionHomeScreen */ = {
-			isa = PBXGroup;
-			children = (
-				A7B72DD02405818D00071BF8 /* HeaderViewInSection.swift */,
-				A7B72DCD24057F9000071BF8 /* HeaderViewInSection.xib */,
-			);
-			path = HeaderSectionHomeScreen;
-			sourceTree = "<group>";
-		};
 		A72BE5DA2405CFB10056C678 /* ViewCollectionCellHomeScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,7 +132,6 @@
 			isa = PBXGroup;
 			children = (
 				A72BE5DA2405CFB10056C678 /* ViewCollectionCellHomeScreen */,
-				A72BE5D92405CFA10056C678 /* HeaderSectionHomeScreen */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -157,8 +139,6 @@
 		A7B72DD224059F6E00071BF8 /* Extesnsions */ = {
 			isa = PBXGroup;
 			children = (
-				A7B72DD324059FA700071BF8 /* ExtensionTabelViewForHomeScreenVC.swift */,
-				A7F396C32405ED7400032314 /* ExtensionCollectionView + HomeTableVC.swift */,
 			);
 			path = Extesnsions;
 			sourceTree = "<group>";
@@ -169,10 +149,10 @@
 				A70D472923FECD2F0099D539 /* LoginVC.swift */,
 				A7F1937F23FECF4A00A2901F /* MainTabBarController.swift */,
 				A7A10F9F24018B6400FF72A3 /* HomeScreenVC.swift */,
-				A72BE5E12405DC900056C678 /* HomeTableVC.swift */,
 				A7AA4172240ABA9C00E364B7 /* NewCategoryVC.swift */,
 				A7780C30240D60A8005E2FD3 /* EditViewController.swift */,
 				A7780C32240D64FE005E2FD3 /* DeteilViewController.swift */,
+				A7E0C6DB2418D1CB009AA686 /* AddNewTransaction.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -202,12 +182,12 @@
 				A7F1938123FECF8400A2901F /* UserData.swift */,
 				A765F05823FF1C260001DFE6 /* Income.swift */,
 				A765F05423FF02C90001DFE6 /* Wallet.swift */,
-				A75D5B0F240BEF0F00A5A7F9 /* SubWallet.swift */,
 				A7544AA4240ECD8D00889FF4 /* Goal.swift */,
 				A765F05A23FF1D170001DFE6 /* Expens.swift */,
-				A765F05623FF1AEE0001DFE6 /* DataManager.swift */,
-				A7295DEC240D76320078DFE1 /* protocolCell.swift */,
 				A7295DEE240DAF370078DFE1 /* TypesOfCategories.swift */,
+				A78CAA22241A5B5C0085E548 /* Transaction.swift */,
+				A765F05623FF1AEE0001DFE6 /* DataManager.swift */,
+				A77E839A2423838E009460EA /* SubCategory.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -280,7 +260,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7B72DCE24057F9000071BF8 /* HeaderViewInSection.xib in Resources */,
 				A70D473223FECD300099D539 /* LaunchScreen.storyboard in Resources */,
 				A70D472F23FECD300099D539 /* Assets.xcassets in Resources */,
 				A70D472D23FECD2F0099D539 /* Main.storyboard in Resources */,
@@ -320,29 +299,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A78CAA23241A5B5C0085E548 /* Transaction.swift in Sources */,
 				A765F05523FF02C90001DFE6 /* Wallet.swift in Sources */,
 				A70D472A23FECD2F0099D539 /* LoginVC.swift in Sources */,
 				A765F05923FF1C260001DFE6 /* Income.swift in Sources */,
 				A7780C33240D64FE005E2FD3 /* DeteilViewController.swift in Sources */,
 				A7295DEF240DAF370078DFE1 /* TypesOfCategories.swift in Sources */,
 				A7A10FA024018B6400FF72A3 /* HomeScreenVC.swift in Sources */,
+				A7E0C6DC2418D1CB009AA686 /* AddNewTransaction.swift in Sources */,
 				A7780C31240D60A8005E2FD3 /* EditViewController.swift in Sources */,
-				A72BE5E22405DC900056C678 /* HomeTableVC.swift in Sources */,
 				A72BE5E52405E8270056C678 /* CollectionViewCell.swift in Sources */,
 				A70D472623FECD2F0099D539 /* AppDelegate.swift in Sources */,
-				A7B72DD424059FA700071BF8 /* ExtensionTabelViewForHomeScreenVC.swift in Sources */,
 				A765F05B23FF1D170001DFE6 /* Expens.swift in Sources */,
-				A7295DED240D76320078DFE1 /* protocolCell.swift in Sources */,
+				A77E839B2423838E009460EA /* SubCategory.swift in Sources */,
 				A765F05723FF1AEE0001DFE6 /* DataManager.swift in Sources */,
 				A7F1938023FECF4A00A2901F /* MainTabBarController.swift in Sources */,
 				A7F1938223FECF8400A2901F /* UserData.swift in Sources */,
 				A7B72DC52403C99100071BF8 /* ButtonsAppearence.swift in Sources */,
 				A70D472823FECD2F0099D539 /* SceneDelegate.swift in Sources */,
-				A7B72DD12405818D00071BF8 /* HeaderViewInSection.swift in Sources */,
 				A7AA4173240ABA9C00E364B7 /* NewCategoryVC.swift in Sources */,
 				A7544AA5240ECD8D00889FF4 /* Goal.swift in Sources */,
-				A7F396C42405ED7400032314 /* ExtensionCollectionView + HomeTableVC.swift in Sources */,
-				A75D5B10240BEF0F00A5A7F9 /* SubWallet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
